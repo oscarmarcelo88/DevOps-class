@@ -1,0 +1,4 @@
+FROM nginx
+EXPOSE 8080
+ARG readyVar
+RUN if [ "$readyVar" = "IS_READY" ]; then echo "Is ready" > /usr/share/nginx/html/index.html; else echo "Na mamessl s" > /usr/share/nginx/html/index.html; fi
